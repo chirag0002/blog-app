@@ -48,7 +48,7 @@ router.get('/blogs', async(req, res) => {
     try {
         // retrieve all blogs from the database
         const blogs = await Blog.find();
-        res.status(200).json(blogs);
+        res.status(200).json(JSON.parse(blogs));
     } catch (err) {
         console.error(err);
         return res.status(500).json({ message: 'Internal Server Error' });
@@ -61,7 +61,7 @@ router.get('/myBlogs', authMiddleware, async(req, res) => {
     try {
         // retrieve blogs associated with the authenticated user
         const blogs = await Blog.find({ _id: { $in: user.blogs } });
-        res.status(200).json(blogs);
+        res.status(200).json(JSON.parse(blogs));
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: 'Internal Server Error' });
@@ -83,7 +83,7 @@ router.get('/blogs/:id', async(req, res) => {
         if(!blog) {
             return res.status(404).json({message: "Blog post not found"});
         }
-        res.status(200).json(blog);
+        res.status(200).json(JSON.parse(blog));
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: 'Internal Server Error'});
