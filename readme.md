@@ -20,6 +20,7 @@ A basic blog application with user authentication, blog creation, and management
 - Input validation for user and blog data
 - Non authenticated users can read blog posts
 - Only authenticated user can delete and update blogs which they created only
+- Rate limit which allows 5 requests per 10 seconds
 
 ## Prerequisites
 
@@ -31,7 +32,7 @@ A basic blog application with user authentication, blog creation, and management
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/blog-app.git
+   git clone https://github.com/chirag0002/blog-app.git
    ```
 
 2. Install dependencies:
