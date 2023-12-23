@@ -31,7 +31,7 @@ A basic blog application with user authentication, blog creation, and management
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/blog-app.git
+   git clone https://github.com/chirag0002/blog-app.git
    ```
 
 2. Install dependencies:
